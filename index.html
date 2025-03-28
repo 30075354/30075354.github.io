@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>William Davies - Portfolio</title>
-  <!-- Google Font for a fresh look -->
+  <!-- Google Font for a fresh vibe -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
+    }
+    /* Carousel styling */
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-out;
+    }
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -18,73 +27,118 @@
   <nav class="bg-gray-800 py-4 fixed top-0 w-full z-50 shadow">
     <div class="container mx-auto flex justify-between items-center px-4">
       <h1 class="text-xl font-bold">William Davies</h1>
-      <ul class="flex space-x-4">
-        <li><a href="#home" class="hover:text-blue-400 transition duration-300 ease-in-out">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-400 transition duration-300 ease-in-out">About Me</a></li>
-        <li><a href="#projects" class="hover:text-blue-400 transition duration-300 ease-in-out">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-400 transition duration-300 ease-in-out">Contact</a></li>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-blue-400 transition duration-300">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-400 transition duration-300">About Me</a></li>
+        <li><a href="#offer" class="hover:text-blue-400 transition duration-300">What I Offer</a></li>
+        <li><a href="#projects" class="hover:text-blue-400 transition duration-300">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Welcome Section -->
+  <!-- Hero Section -->
   <section id="home" class="pt-24 pb-16 text-center bg-gradient-to-r from-blue-900 to-gray-800">
     <div class="container mx-auto px-4">
       <h2 class="text-5xl font-bold mb-4">Welcome to My Portfolio!</h2>
       <p class="text-xl mb-8">Game Developer | Voice Actor | Composer</p>
-      <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300 ease-in-out">View My Work</a>
+      <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded transition duration-300">View My Work</a>
     </div>
   </section>
 
   <!-- About Me Section -->
-  <section id="about" class="bg-gray-800 py-12">
+  <section id="about" class="bg-gray-800 py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-      <p class="text-base leading-relaxed">
-        I'm William Davies, a passionate game developer currently studying Game Development at the University of South Wales. I specialize in Unreal Engine, C++, voice acting, music composition, and creating immersive gaming experiences. Always looking forward to new challenges and creative projects!
+      <h2 class="text-4xl font-semibold mb-6">About Me</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Hey there! I’m William Davies—a passionate game developer currently studying at the University of South Wales. 
+        I specialize in Unreal Engine, C++, voice acting, and music composition. Whether it’s crafting immersive gaming experiences or adding that extra flair with a voice-over, I’m all in.
       </p>
+      <p class="text-lg leading-relaxed">
+        When I’m not coding or composing, you can catch me tinkering with DIY tech projects or exploring new games. 
+        Let's connect and make something awesome together!
+      </p>
+      <div class="mt-6 flex space-x-4 justify-center">
+        <a href="https://www.linkedin.com/in/william-davies-7b9076359/" target="_blank" class="text-blue-400 hover:underline">LinkedIn</a>
+        <a href="https://github.com/30075354" target="_blank" class="text-blue-400 hover:underline">GitHub</a>
+        <a href="https://williamdaviesdev.itch.io/" target="_blank" class="text-blue-400 hover:underline">Itch.io</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Offer Section with Carousel -->
+  <section id="offer" class="py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-semibold mb-8">What I Offer</h2>
+      <div class="relative overflow-hidden">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item p-8">
+            <h3 class="text-2xl font-bold mb-2">Game Development</h3>
+            <p class="mb-4">Custom game design using cutting-edge tech. From concept to code, I build experiences that engage and inspire.</p>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item p-8">
+            <h3 class="text-2xl font-bold mb-2">Voice Acting</h3>
+            <p class="mb-4">Bring characters to life with dynamic voice overs. I deliver versatile and engaging audio performances.</p>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item p-8">
+            <h3 class="text-2xl font-bold mb-2">Music Composition</h3>
+            <p class="mb-4">Crafting soundtracks that set the mood. Retro jazz to epic scores, I compose music that enhances the gameplay experience.</p>
+          </div>
+        </div>
+        <!-- Carousel Controls -->
+        <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded">Prev</button>
+        <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded">Next</button>
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-12">
+  <section id="projects" class="bg-gray-800 py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-6">Projects</h2>
+      <h2 class="text-4xl font-semibold mb-8 text-center">Projects</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gray-800 rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out">
-          <a href="https://williamdaviesdev.itch.io/retro-jazz-like-music-for-games" class="text-xl font-bold text-blue-400 hover:underline">Sonder Soundtrack</a>
-          <p class="mt-2">Retro Jazz music for games.</p>
+        <div class="bg-gray-700 rounded-lg p-6 hover:shadow-xl transition duration-300">
+          <a href="https://williamdaviesdev.itch.io/retro-jazz-like-music-for-games" target="_blank" class="text-2xl font-bold text-blue-400 hover:underline">Sonder Soundtrack</a>
+          <p class="mt-3">Retro Jazz music for games.</p>
         </div>
-        <div class="bg-gray-800 rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out">
-          <a href="https://cainetinyarms.itch.io/sonder-reflections" class="text-xl font-bold text-blue-400 hover:underline">Sonder: Reflections</a>
-          <p class="mt-2">Visual Novel Game.</p>
+        <div class="bg-gray-700 rounded-lg p-6 hover:shadow-xl transition duration-300">
+          <a href="https://cainetinyarms.itch.io/sonder-reflections" target="_blank" class="text-2xl font-bold text-blue-400 hover:underline">Sonder: Reflections</a>
+          <p class="mt-3">Visual Novel Game.</p>
         </div>
-        <div class="bg-gray-800 rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out">
-          <a href="https://williamdaviesdev.itch.io/arcane-earnings" class="text-xl font-bold text-blue-400 hover:underline">Arcane Earnings</a>
-          <p class="mt-2">Adventure game.</p>
+        <div class="bg-gray-700 rounded-lg p-6 hover:shadow-xl transition duration-300">
+          <a href="https://williamdaviesdev.itch.io/arcane-earnings" target="_blank" class="text-2xl font-bold text-blue-400 hover:underline">Arcane Earnings</a>
+          <p class="mt-3">Adventure game.</p>
         </div>
-        <div class="bg-gray-800 rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out">
-          <a href="https://williamdaviesdev.itch.io/metal-reign-2" class="text-xl font-bold text-blue-400 hover:underline">Metal Reign 2</a>
-          <p class="mt-2">Shooter Game, 2022 coursework.</p>
+        <div class="bg-gray-700 rounded-lg p-6 hover:shadow-xl transition duration-300">
+          <a href="https://williamdaviesdev.itch.io/metal-reign-2" target="_blank" class="text-2xl font-bold text-blue-400 hover:underline">Metal Reign 2</a>
+          <p class="mt-3">Shooter Game, 2022 coursework.</p>
         </div>
-        <div class="bg-gray-800 rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out">
-          <a href="https://williamdaviesdev.itch.io/the-polymorph-problem" class="text-xl font-bold text-blue-400 hover:underline">The Polymorph Problem</a>
-          <p class="mt-2">Adventure game.</p>
+        <div class="bg-gray-700 rounded-lg p-6 hover:shadow-xl transition duration-300">
+          <a href="https://williamdaviesdev.itch.io/the-polymorph-problem" target="_blank" class="text-2xl font-bold text-blue-400 hover:underline">The Polymorph Problem</a>
+          <p class="mt-3">Adventure game.</p>
         </div>
-        <div class="bg-gray-800 rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out">
-          <a href="https://williamdaviesdev.itch.io/metal-reign" class="text-xl font-bold text-blue-400 hover:underline">Metal Reign</a>
-          <p class="mt-2">Shooter game playable in-browser.</p>
+        <div class="bg-gray-700 rounded-lg p-6 hover:shadow-xl transition duration-300">
+          <a href="https://williamdaviesdev.itch.io/metal-reign" target="_blank" class="text-2xl font-bold text-blue-400 hover:underline">Metal Reign</a>
+          <p class="mt-3">Shooter game playable in-browser.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-gray-800 py-12">
+  <section id="contact" class="py-16">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
-      <p>Email: <a href="mailto:your.email@example.com" class="text-blue-400 hover:underline">your.email@example.com</a></p>
-      <p>Follow me on <a href="https://github.com" class="text-blue-400 hover:underline">GitHub</a> | <a href="https://linkedin.com" class="text-blue-400 hover:underline">LinkedIn</a></p>
+      <h2 class="text-4xl font-semibold mb-6">Get In Touch</h2>
+      <p class="text-lg mb-4">Interested in collaborating or just want to say hi? Drop me a message!</p>
+      <p class="mb-4">Email: <a href="mailto:your.email@example.com" class="text-blue-400 hover:underline">your.email@example.com</a></p>
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.linkedin.com/in/william-davies-7b9076359/" target="_blank" class="text-blue-400 hover:underline">LinkedIn</a>
+        <a href="https://github.com/30075354" target="_blank" class="text-blue-400 hover:underline">GitHub</a>
+        <a href="https://williamdaviesdev.itch.io/" target="_blank" class="text-blue-400 hover:underline">Itch.io</a>
+      </div>
     </div>
   </section>
 
@@ -94,5 +148,37 @@
       <p>&copy; 2024 William Davies. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    const carouselInner = document.querySelector('.carousel-inner');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let currentIndex = 0;
+    
+    function updateCarousel() {
+      const width = carouselInner.clientWidth;
+      carouselInner.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+    
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    });
+    
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    });
+    
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }, 5000);
+    
+    // Adjust carousel on window resize
+    window.addEventListener('resize', updateCarousel);
+  </script>
 </body>
 </html>
