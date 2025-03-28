@@ -25,9 +25,9 @@
 <body class="bg-gray-900 text-white">
   <!-- Navbar -->
   <nav class="bg-gray-800 py-4 fixed top-0 w-full z-50 shadow">
-    <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="container mx-auto flex flex-wrap justify-between items-center px-4">
       <h1 class="text-xl font-bold">William Davies</h1>
-      <ul class="flex space-x-6">
+      <ul class="flex flex-wrap space-x-4 sm:space-x-6 mt-2 sm:mt-0">
         <li><a href="#home" class="hover:text-blue-400 transition duration-300">Home</a></li>
         <li><a href="#about" class="hover:text-blue-400 transition duration-300">About Me</a></li>
         <li><a href="#offer" class="hover:text-blue-400 transition duration-300">What I Offer</a></li>
@@ -45,8 +45,8 @@
   >
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
-      <h2 class="text-5xl font-bold mb-4">Welcome to My Portfolio!</h2>
-      <p class="text-xl mb-8">Game Developer | Voice Actor | Composer</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to My Portfolio!</h2>
+      <p class="text-base sm:text-lg md:text-xl mb-8">Game Developer | Voice Actor | Composer</p>
       <a 
         href="#projects" 
         class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded transition duration-300"
@@ -66,16 +66,16 @@
   <!-- About Me Section -->
   <section id="about" class="bg-gray-800 py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-semibold mb-6">About Me</h2>
-      <p class="text-lg leading-relaxed mb-4">
+      <h2 class="text-3xl sm:text-4xl font-semibold mb-6">About Me</h2>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
         Hey there! I’m William Davies—a passionate game developer currently studying at the University of South Wales. 
         I specialize in Unreal Engine, C++, voice acting, and music composition. Whether it’s crafting immersive gaming experiences or adding that extra flair with a voice-over, I’m all in.
       </p>
-      <p class="text-lg leading-relaxed">
+      <p class="text-base sm:text-lg leading-relaxed">
         When I’m not coding or composing, you can catch me tinkering with DIY tech projects or exploring new games. 
         Let's connect and make something awesome together!
       </p>
-      <div class="mt-6 flex space-x-4 justify-center">
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
         <a href="https://www.linkedin.com/in/william-davies-7b9076359/" target="_blank" class="text-blue-400 hover:underline">LinkedIn</a>
         <a href="https://github.com/30075354" target="_blank" class="text-blue-400 hover:underline">GitHub</a>
         <a href="https://williamdaviesdev.itch.io/" target="_blank" class="text-blue-400 hover:underline">Itch.io</a>
@@ -86,7 +86,7 @@
   <!-- What I Offer Section with Carousel -->
   <section id="offer" class="py-16">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl font-semibold mb-8">What I Offer</h2>
+      <h2 class="text-3xl sm:text-4xl font-semibold mb-8">What I Offer</h2>
       <div class="relative overflow-hidden">
         <div class="carousel-inner">
           <!-- Slide 1 -->
@@ -125,8 +125,8 @@
   <!-- Projects Section with Images -->
   <section id="projects" class="bg-gray-800 py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-semibold mb-8 text-center">Projects</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 class="text-3xl sm:text-4xl font-semibold mb-8 text-center">Projects</h2>
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <!-- Project 1: Sonder Soundtrack -->
         <div class="bg-gray-700 rounded-lg overflow-hidden hover:shadow-xl transition duration-300">
           <img src="images/sonder-soundtrack.png" alt="Sonder Soundtrack" class="w-full">
@@ -179,16 +179,31 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section with Basic HTML Form -->
   <section id="contact" class="py-16">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl font-semibold mb-6">Get In Touch</h2>
-      <p class="text-lg mb-4">Interested in collaborating or just want to say hi? Drop me a message!</p>
-      <p class="mb-4">
-        Email: 
-        <a href="mailto:willzac2001@gmail.com" class="text-blue-400 hover:underline">willzac2001@gmail.com</a>
-      </p>
-      <div class="flex justify-center space-x-6">
+      <h2 class="text-3xl sm:text-4xl font-semibold mb-6">Get In Touch</h2>
+      <p class="text-base sm:text-lg mb-4">Interested in collaborating or just want to say hi? Fill out the form below!</p>
+      <form action="mailto:willzac2001@gmail.com" method="post" enctype="text/plain" class="max-w-xl mx-auto text-left">
+        <div class="mb-4">
+          <label for="name" class="block mb-2">Name</label>
+          <input type="text" id="name" name="name" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="Your Name">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block mb-2">Email</label>
+          <input type="email" id="email" name="email" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="you@example.com">
+        </div>
+        <div class="mb-4">
+          <label for="subject" class="block mb-2">Subject</label>
+          <input type="text" id="subject" name="subject" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="Subject">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block mb-2">Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="Your message..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded transition duration-300">Send Message</button>
+      </form>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
         <a href="https://www.linkedin.com/in/william-davies-7b9076359/" target="_blank" class="text-blue-400 hover:underline">LinkedIn</a>
         <a href="https://github.com/30075354" target="_blank" class="text-blue-400 hover:underline">GitHub</a>
         <a href="https://williamdaviesdev.itch.io/" target="_blank" class="text-blue-400 hover:underline">Itch.io</a>
@@ -202,32 +217,6 @@
       <p>&copy; 2025 William Davies. All Rights Reserved.</p>
     </div>
   </footer>
-<!-- Basic HTML Contact Form -->
-<section id="contact" class="py-16">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-4xl font-semibold mb-6">Get In Touch</h2>
-    <p class="text-lg mb-4">Interested in collaborating or just want to say hi? Fill out the form below!</p>
-    <form action="mailto:your.email@example.com" method="post" enctype="text/plain" class="max-w-xl mx-auto text-left">
-      <div class="mb-4">
-        <label for="name" class="block mb-2">Name</label>
-        <input type="text" id="name" name="name" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="Your Name">
-      </div>
-      <div class="mb-4">
-        <label for="email" class="block mb-2">Email</label>
-        <input type="email" id="email" name="email" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="you@example.com">
-      </div>
-      <div class="mb-4">
-        <label for="subject" class="block mb-2">Subject</label>
-        <input type="text" id="subject" name="subject" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="Subject">
-      </div>
-      <div class="mb-4">
-        <label for="message" class="block mb-2">Message</label>
-        <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded bg-gray-700 text-white" placeholder="Your message..."></textarea>
-      </div>
-      <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded transition duration-300">Send Message</button>
-    </form>
-  </div>
-</section>
 
   <!-- Carousel Script -->
   <script>
